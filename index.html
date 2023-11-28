@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<input id = "input" type="text" name="input" placeholder="Enter your name">
+	<button id = "button">Click me</button>
+	<br/>
+	<div id="result"></div>
+	<script>
+		$('input').val("sfdg' + alert(\"hello world\") + '")
+		$('#button').on('click', ()=>{
+			let input = $('#input').val();
+			$.ajax({
+				url: '/api',
+				method: 'GET',
+				data: {
+					name: input
+				},
+				success: (data)=>{
+					eval(data);
+				}
+			})
+		})
+
+	</script>
+</body>
+</html>
