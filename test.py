@@ -8,7 +8,6 @@ app = flask.Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-	params = request.args
 	# return html from string
 	return render_template('index.html')
 
